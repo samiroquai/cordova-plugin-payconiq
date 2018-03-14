@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-payconiq" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>Payconiq</name>
+
+<js-module name="Payconiq" src="www/Payconiq.js">
+    <clobbers target="Payconiq" />
+</js-module>
+
+
+<platform name="android">
+
+<config-file parent="/*" target="res/xml/config.xml">
+    <feature name="Payconiq">
+    <param name="android-package" value="be.happli.cordova.payconiq.Payconiq" />
+    <!--<param name="onload" value="true" />-->
+    </feature>
+</config-file>
+
+<config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:label="New Activity" android:name="be.happli.cordova.payconiq.NewActivity"></activity>
+</config-file>
+<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/Payconiq.java" target-dir="src/be.happli.cordova.payconiq/Payconiq" />
+        <source-file src="src/android/NewActivity.java" target-dir="src/be.happli.cordova.payconiq/Payconiq" />
+        <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
+
+</platform>
+</plugin>

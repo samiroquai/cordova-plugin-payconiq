@@ -1,0 +1,11 @@
+{
+  "name": "payconiq",
+  "version": "0.0.4",
+  "description": "Payconiq plugin for Cordova apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Scholtes, Happli",
+  "license": "ISC"
+}
