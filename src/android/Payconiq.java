@@ -36,7 +36,7 @@ public class Payconiq extends CordovaPlugin {
             callbackContext.error("Expected two non-empty string argument for calling Payconiq.");
         }
     }
-      private static final String payconiqScheme = "payconiq://payconiq.com/pay/1/%1$s?returnUrl=%2$s";
+      private static final String payconiqScheme = "https://payconiq.com/pay/1/%1$s?returnUrl=%2$s";
     private static final String payconiqPlayStore = "https://play.google.com/store/apps/details?id=com.payconiq.customers";
 
     private void openPayconiq(String transactionId, String returnUrl) {
@@ -55,7 +55,8 @@ public class Payconiq extends CordovaPlugin {
     }
 
     private static Intent getPayconiqIntent(String transactionId, String returnUrl) {
-        Uri uri = Uri.parse(String.format(payconiqScheme, transactionId, returnUrl));
+        String link = String.format("https://payconiq.com/1/%s/?returnUrl=%s", transactionId, returnUrl);
+        Uri uri = Uri.parse(link);
         return new Intent(Intent.ACTION_VIEW, uri);
     }
 
